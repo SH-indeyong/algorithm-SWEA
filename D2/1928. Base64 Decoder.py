@@ -8,13 +8,7 @@ for test_case in range(1, T + 1):
     res = ''
     
     for i in range(len(text)):
-        idx_to_bin = 0
-        idx_to_bin = bin(char.index(text[i]))[2:]
-        length = len(idx_to_bin)
-        
-        while (len(idx_to_bin) < 6):
-            idx_to_bin = '0' + idx_to_bin
-    # print(idx_to_bin)
+        idx_to_bin = bin(char.index(text[i]))[2:].zfill(6)
         s = s + idx_to_bin
 
     for j in range(0, len(s), 8):
@@ -37,4 +31,7 @@ TGlmZSBpdHNlbGYgaXMgYSBxdW90YXRpb24u
     ii.  인덱스값을 2진수로 변환
     iii. 6비트를 채우기 위해 0으로 채움
     iv.  6비트씩 1 글자를 만듦
+
+3. zfill()
+    - 자릿수만큼 0으로 채우는 함수
 '''
