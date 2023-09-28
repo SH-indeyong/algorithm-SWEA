@@ -1,18 +1,10 @@
-char = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-']
+from  base64 import b64decode
 
 T = int(input())
 
 for test_case in range(1, T + 1):
-    text = list(input())
-    s = ''
-    res = ''
-    
-    for i in range(len(text)):
-        idx_to_bin = bin(char.index(text[i]))[2:].zfill(6)
-        s = s + idx_to_bin
-
-    for j in range(0, len(s), 8):
-        res += chr(int(s[j:j+8], 2))
+    text = input()
+    res = b64decode(text).decode('UTF-8')
 
     print("#%d %s" %(test_case, res))
 
@@ -34,4 +26,8 @@ TGlmZSBpdHNlbGYgaXMgYSBxdW90YXRpb24u
 
 3. zfill()
     - 자릿수만큼 0으로 채우는 함수
+
+4. base64 라이브러리
+    - b64decode(): Base64 문자열을 이진 데이터로 디코딩
+    - decode('UTF-8): 이진 데이터를 문자열로 변환
 '''
