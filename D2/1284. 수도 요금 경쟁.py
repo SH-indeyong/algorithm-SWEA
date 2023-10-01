@@ -22,9 +22,6 @@ for tc in range(1, T+1):
         wonB = Q + ((W-R)*S)
     else:
         wonB = Q
+    res = min(wonA, wonB)
     
-    if wonA < wonB:
-        res = wonA
-    else:
-        res = wonB
     print("#%d %d" % (tc, res))
