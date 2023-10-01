@@ -10,3 +10,7 @@ for test_case in range(1, T+1):
         print("#%d -1" % (test_case))
     else:
         print("#%d %s/%s/%s" % (test_case, y, m, d))
+
+'''
+month의 day 정보를 리스트로 넣어두고 비교하기
+'''
